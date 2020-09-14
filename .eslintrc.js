@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["plugin:react/recommended", "airbnb"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+  ],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -16,6 +20,10 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  plugins: ["react", "@typescript-eslint", "prettier"],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "prettier/prettier": "error",
+  },
 };
